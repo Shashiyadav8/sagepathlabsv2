@@ -1,0 +1,166 @@
+/* StatsSection.css */
+
+.stats-section-new {
+  position: relative;
+  background-color: #f0fdf4;
+  /* Light hint of green/teal background */
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(24, 188, 122, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(7, 182, 239, 0.05) 0%, transparent 20%);
+  overflow: hidden;
+}
+
+/* Header */
+.stats-subtitle {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(24, 188, 122, 0.1);
+  color: #18BC7A;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stats-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.stats-heading .highlight {
+  color: #07B6EF;
+}
+
+.stats-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.stats-card-modern {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(7, 182, 239, 0.1);
+  border-color: rgba(7, 182, 239, 0.2);
+}
+
+.stats-card-modern:hover .stats-icon-wrapper {
+  background: #18BC7A;
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon */
+.stats-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: #e0f2fe;
+  /* Light blue base */
+  color: #07B6EF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.stats-icon-wrapper .material-icons-outlined {
+  font-size: 30px;
+}
+
+/* Values & Labels */
+.stats-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  /* Dark Grey base */
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+/* Gradient Text for Numbers only on hover or active state? 
+   Actually, let's make them gradient by default for impact */
+.stats-value span {
+  background: linear-gradient(135deg, #1f2937 30%, #18BC7A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-heading {
+    font-size: 2rem;
+  }
+
+  .stats-card-modern {
+    padding: 24px 16px;
+  }
+
+  .stats-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-card-modern {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .stats-icon-wrapper {
+    margin-bottom: 0;
+    width: 50px;
+    height: 50px;
+  }
+
+  .stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats-value {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+
+  .stats-label {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,488 @@
+/* Header.css - active item as fully rounded pill container + polished UI */
+
+/* ---------- Variables ---------- */
+:root {
+  --accent: #06B6EF;
+  --accent-2: #18BC7A;
+  --muted: #6b7280;
+  --danger: #ED1C24;
+  --bg: #ffffff;
+  --glass: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- Base ---------- */
+.header-main {
+  width: 100%;
+  background: var(--bg);
+  border-bottom: 1.5px solid #e9f6fb;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Top bar */
+.header-topbar {
+  background: linear-gradient(90deg, rgba(6, 182, 239, 0.04), rgba(24, 188, 122, 0.02));
+  color: var(--accent-2);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  letter-spacing: 0.2px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-phone {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 6px;
+  background: linear-gradient(90deg, rgba(6, 182, 239, 0.12), transparent);
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.01);
+}
+
+.header-social .social-icon {
+  color: var(--danger);
+  margin-left: 10px;
+  font-size: 1.05rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  transition: transform 180ms ease, background 180ms ease, opacity 180ms;
+}
+
+.header-social .social-icon:hover {
+  transform: translateY(-3px);
+  opacity: 0.92;
+  background: rgba(237, 28, 36, 0.04);
+}
+
+/* Navbar container */
+.header-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 36px;
+  gap: 16px;
+  position: relative;
+}
+
+/* Logo region */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 190px;
+}
+
+.header-logo {
+  height: 48px;
+  transition: transform .18s ease;
+}
+
+.header-logo:hover {
+  transform: translateY(-2px);
+}
+
+.header-tagline {
+  font-size: 0.88rem;
+  color: #e23a3a;
+  font-weight: 700;
+  margin-left: 4px;
+  margin-top: -4px;
+  letter-spacing: 0.38px;
+}
+
+/* Nav list */
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 6px;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+/* Individual item */
+.nav-item {
+  margin: 0 10px;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Link style */
+.nav-link {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.02rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: color 200ms ease, transform 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.nav-link .nav-label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-link .chev-icon {
+  font-size: 0.8rem;
+  margin-left: 2px;
+  color: #475569;
+  transition: transform 180ms ease;
+}
+
+/* Underline kept for subtlety but hidden when pill active */
+.nav-underline {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(.2, .9, .2, 1);
+  opacity: 0.95;
+}
+
+/* Hover */
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ---------- NEW: Pill-style Active Container ---------- */
+
+/* make the active item look like a rounded pill */
+.nav-link.active,
+.parent-active>.nav-link,
+.nav-item.parent-active>.nav-link {
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 999px;
+  /* fully rounded pill */
+  background: #18bc7a;
+  box-shadow: 0 10px 26px rgba(237, 28, 36, 0.14), inset 0 -2px 12px rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+  transition: transform 180ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+/* When active but you prefer accent color (blue) for current section instead of red, swap gradient above.
+   If you want Life Sciences active in blue, change gradient to: linear-gradient(90deg, var(--accent), var(--accent-2)); */
+
+/* Hide underline when pill active */
+.nav-link.active+.nav-underline,
+.parent-active>.nav-link .nav-underline {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+/* Slight chevron rotate when submenu opened/active */
+.nav-item.submenu-open>.nav-link .chev-icon,
+.nav-item.parent-active>.nav-link .chev-icon {
+  transform: rotate(-180deg);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ---------- Submenu styles ---------- */
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 220px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 250, 250, 0.95));
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 18px 40px rgba(13, 50, 60, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1200;
+  flex-direction: column;
+  gap: 6px;
+  transform-origin: top center;
+  transition: opacity 180ms ease, transform 180ms ease;
+  opacity: 0;
+  transform: translateY(-6px) scale(.98);
+}
+
+@media (min-width: 992px) {
+
+  .has-submenu:hover>.submenu,
+  .has-submenu:focus-within>.submenu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.submenu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-sublink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #0f172a;
+  transition: transform 120ms ease, background 140ms ease, color 140ms;
+}
+
+.nav-sublink:hover,
+.nav-sublink:focus,
+.nav-sublink.active {
+  background: linear-gradient(90deg, rgba(6, 182, 239, 0.06), rgba(24, 188, 122, 0.04));
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+.sublink-icon {
+  display: inline-flex;
+  min-width: 26px;
+  min-height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--accent-2);
+}
+
+/* ---------- CTA (Order) ---------- */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+}
+
+.order-btn {
+  background: linear-gradient(90deg, var(--danger), #ec5b4f);
+  color: #fff !important;
+  border: none;
+  border-radius: 28px;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 11px 22px;
+  /*display: inline-flex;*/
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(237, 28, 36, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.order-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 46px rgba(24, 188, 122, 0.12);
+}
+
+.order-arrow {
+  font-weight: 900;
+}
+
+/* ---------- Responsive ---------- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--accent);
+  cursor: pointer;
+  z-index: 200;
+}
+
+@media (max-width: 1250px) {
+  .header-topbar {
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .header-navbar {
+    padding: 12px 14px;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-logo {
+    height: 40px;
+  }
+
+  .header-tagline {
+    font-size: 0.88rem;
+    color: var(--danger);
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 14px;
+    top: 18px;
+    background: #fff;
+    padding: 6px 8px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 30px 60px rgba(13, 50, 60, 0.06);
+    flex-direction: column;
+    align-items: stretch;
+    width: 100vw;
+    padding: 14px 16px;
+    display: none;
+    z-index: 100;
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    font-size: 1.02rem;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  .nav-link .chev-icon {
+    transition: transform 200ms;
+  }
+
+  /* mobile: use pill active but slightly different contrast */
+  .nav-link.active,
+  .parent-active>.nav-link {
+    color: #fff !important;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(237, 28, 36, 0.95), rgba(255, 96, 96, 0.88));
+    box-shadow: 0 8px 20px rgba(237, 28, 36, 0.10);
+    transform: none;
+  }
+
+  .has-submenu .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 6px;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+  }
+
+  .has-submenu.submenu-open>.submenu,
+  .has-submenu .submenu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-sublink {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-left: 8px;
+  }
+
+  .header-cta {
+    width: 100%;
+    order: 3;
+    /* forces it to appear at the bottom */
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .order-btn {
+    width: 92%;
+    max-width: 420px;
+    padding: 14px 0;
+    border-radius: 30px;
+  }
+}
+
+/* small screens */
+@media (max-width: 420px) {
+  .nav-sublink {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .header-topbar {
+    font-size: 0.92rem;
+    gap: 4px;
+  }
+
+  .header-logo {
+    height: 36px;
+  }
+
+  .order-btn {
+    width: 92%;
+    padding: 11px;
+    font-size: 0.98rem;
+  }
+}
+
+/* Accessibility focus */
+.nav-link:focus,
+.nav-sublink:focus,
+.order-btn:focus,
+.nav-toggle:focus {
+  outline: 3px solid rgba(6, 182, 239, 0.18);
+  outline-offset: 4px;
+  border-radius: 8px;
+}

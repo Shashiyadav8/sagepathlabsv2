@@ -1,0 +1,181 @@
+/* src/styles/dos-table.css */
+
+.dos-section {
+  background: #f6fbff;
+  padding: 24px 0;
+}
+
+/* container helper if you need it */
+.dos-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.dos-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dos-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1a365d;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dos-toolbar label {
+  font-size: 14px;
+  color: #2d3748;
+}
+
+.dos-toolbar select,
+.dos-toolbar input {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e0;
+  font-size: 14px;
+  outline: none;
+}
+
+.dos-toolbar select:focus,
+.dos-toolbar input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce33;
+}
+
+/* table wrapper */
+.dos-table-wrapper {
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid #d8e2f0;
+  background: #ffffff;
+}
+
+/* table */
+.dos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.dos-table thead {
+  background: #e6f2ff;
+}
+
+.dos-table th,
+.dos-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #edf2f7;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dos-table th {
+  font-weight: 600;
+  color: #1a365d;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+
+.dos-table th .sort-icon {
+  font-size: 11px;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+.dos-table tbody tr:nth-child(even) {
+  background: #f9fbff;
+}
+
+.dos-table tbody tr:hover {
+  background: #eef6ff;
+}
+
+/* clinical info column can wrap */
+.dos-clinical {
+  max-width: 220px;
+}
+
+/* dummy report icon */
+.dos-dummy a {
+  color: #e3533d;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dos-dummy a:hover {
+  color: #c63e2a;
+}
+
+.dos-dummy .disabled {
+  color: #cbd5e0;
+}
+
+/* empty state */
+.dos-empty {
+  text-align: center;
+  padding: 24px;
+  color: #718096;
+}
+
+/* footer + pagination */
+.dos-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.dos-pagination button {
+  margin: 0 2px;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e0;
+  background: #ffffff;
+  color: #2d3748;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+.dos-pagination button:hover:not(:disabled) {
+  background: #edf2f7;
+}
+
+.dos-pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.dos-pagination span {
+  margin: 0 8px;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .dos-toolbar {
+    align-items: flex-start;
+  }
+
+  .dos-table th,
+  .dos-table td {
+    padding: 8px 10px;
+  }
+
+  .dos-clinical {
+    max-width: 160px;
+  }
+}

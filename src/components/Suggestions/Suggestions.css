@@ -1,0 +1,210 @@
+/* Suggestions.css - Premium Design */
+
+.suggestions-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestions-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(24, 188, 122, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(7, 182, 239, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Image Wrapper */
+.sug-img-wrapper {
+  position: relative;
+}
+
+.suggestion-img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.suggestion-img:hover {
+  transform: scale(1.02);
+}
+
+/* Content Card */
+.sug-content-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Badge */
+.suggestions-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #18BC7A 0%, #15a86d 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  padding: 10px 24px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(24, 188, 122, 0.2);
+}
+
+/* Title */
+.suggestions-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #111827 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.suggestions-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Form */
+.suggestions-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sug-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.suggestions-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.suggestions-input:focus {
+  border-color: #18BC7A;
+  background: #f0fdf4;
+  box-shadow: 0 0 0 4px rgba(24, 188, 122, 0.1);
+}
+
+.sug-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button */
+.suggestions-btn {
+  background: linear-gradient(135deg, #18BC7A 0%, #07B6EF 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  box-shadow: 0 8px 25px rgba(24, 188, 122, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.suggestions-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(24, 188, 122, 0.4);
+  background: linear-gradient(135deg, #15a86d 0%, #069cdb 100%);
+}
+
+.suggestions-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.sug-status {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sug-status.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.sug-status.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .suggestions-section {
+    padding: 60px 0;
+  }
+
+  .sug-content-card {
+    padding: 30px 24px;
+  }
+
+  .suggestions-title {
+    font-size: 2rem;
+  }
+
+  .sug-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .suggestion-img {
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .suggestions-title {
+    font-size: 1.75rem;
+  }
+
+  .suggestions-subtitle {
+    font-size: 1rem;
+  }
+
+  .sug-content-card {
+    padding: 24px 20px;
+  }
+}

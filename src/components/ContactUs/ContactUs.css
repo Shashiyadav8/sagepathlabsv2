@@ -1,0 +1,240 @@
+/* ContactUs.css */
+
+/* Reusing some vars and adding specific ones */
+.contact-section-new {
+  position: relative;
+  padding: 80px 0;
+  background: #f8fafc;
+  /* Very light cool grey */
+  overflow: hidden;
+}
+
+/* Header Styles */
+.contact-subtitle {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(7, 182, 239, 0.1);
+  color: #07B6EF;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.contact-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contact-heading .highlight {
+  color: #18BC7A;
+}
+
+.contact-lead {
+  font-size: 1.15rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact Cards */
+.contact-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(7, 182, 239, 0.2);
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-card.whatsapp .card-icon {
+  background: #dcf8c6;
+}
+
+.contact-card.phone .card-icon {
+  background: #e0f2fe;
+  color: #07B6EF;
+}
+
+.contact-card.email .card-icon {
+  background: #fee2e2;
+  color: #ED1C24;
+}
+
+.contact-card .material-icons-outlined {
+  font-size: 28px;
+}
+
+.card-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.card-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.card-info p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.card-arrow {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #d1d5db;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-card:hover .card-arrow {
+  color: #18BC7A;
+  transform: translateX(5px);
+}
+
+/* Location Card */
+.location-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.location-image-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.location-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.location-card:hover .location-img {
+  transform: scale(1.05);
+}
+
+.location-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.badge-visit {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #18BC7A;
+  backdrop-filter: blur(4px);
+}
+
+.location-details {
+  padding: 30px;
+}
+
+.loc-icon-box {
+  width: 40px;
+  height: 40px;
+  background: #f0fdf4;
+  color: #18BC7A;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.location-details h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.location-details p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.map-link {
+  color: #07B6EF;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.map-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .contact-card {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .location-details {
+    padding: 20px;
+  }
+}

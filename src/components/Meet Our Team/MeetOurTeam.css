@@ -1,0 +1,158 @@
+/* MeetOurTeam.css - Professional Medical Board Style */
+
+.meet-team-section {
+  background: #fdfdfd;
+  padding: 80px 0;
+}
+
+/* Header */
+.team-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(24, 188, 122, 0.1);
+  color: #18BC7A;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.team-heading .highlight {
+  color: #07B6EF;
+}
+
+.team-sub {
+  color: #6b7280;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card */
+.team-card-pro {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-pro:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(24, 188, 122, 0.2);
+}
+
+/* Image Area */
+.team-img-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  /* 1:1 Aspect Ratio */
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.team-img-pro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card-pro:hover .team-img-pro {
+  transform: scale(1.05);
+  /* Subtle zoom */
+}
+
+/* Social Overlay */
+.team-social-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.team-card-pro:hover .team-social-overlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color: #0077b5;
+  /* LinkedIn Blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+/* Info Area */
+.team-info {
+  padding: 24px 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-name-pro {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+}
+
+.team-divider {
+  width: 40px;
+  height: 3px;
+  background: #e5e7eb;
+  margin-bottom: 10px;
+  transition: width 0.3s, background 0.3s;
+}
+
+.team-card-pro:hover .team-divider {
+  width: 60px;
+  background: #18BC7A;
+}
+
+.team-role-pro {
+  font-size: 0.85rem;
+  color: #07B6EF;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

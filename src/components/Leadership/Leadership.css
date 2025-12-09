@@ -1,0 +1,232 @@
+/* Leadership.css - Executive Design */
+
+.leadership-section {
+  padding: 120px 20px 100px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.leadership-header {
+  text-align: center;
+  margin-bottom: 70px;
+  padding: 0 20px;
+}
+
+.leadership-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background: rgba(15, 23, 42, 0.05);
+  /* Navy tint */
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border-left: 3px solid #d97706;
+  /* Gold accent */
+}
+
+.leadership-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  /* Navy */
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.leadership-subtitle {
+  font-size: 1.15rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.leader-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.leader-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-bottom-color: #d97706;
+  /* Gold hover border */
+}
+
+/* Card Top (Image) */
+.leader-card-top {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* Align image to bottom */
+  overflow: hidden;
+}
+
+.leader-img-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leader-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.leader-card:hover .leader-img {
+  transform: scale(1.03);
+}
+
+.leader-social-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0077b5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.leader-card:hover .leader-social-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.leader-social-link:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+/* Card Content */
+.leader-card-content {
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.leader-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 5px 0;
+  font-family: 'Georgia', serif;
+  /* Serif for executive feel */
+}
+
+.leader-role {
+  font-size: 0.9rem;
+  color: #d97706;
+  /* Gold */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leader-divider {
+  width: 40px;
+  height: 2px;
+  background: #e2e8f0;
+  margin: 20px 0;
+}
+
+.leader-bio {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Quote */
+.leader-quote-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: auto;
+  /* Push to bottom if content varies */
+  width: 100%;
+}
+
+.quote-icon {
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.leader-quote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .leader-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .leadership-section {
+    padding: 100px 20px 60px;
+  }
+
+  .leadership-title {
+    font-size: 2.2rem;
+  }
+}

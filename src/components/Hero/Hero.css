@@ -1,0 +1,399 @@
+/* Hero.css - Premium Medical Design */
+
+:root {
+  --hero-bg-start: #f0fdf4;
+  --hero-bg-end: #e0faff;
+  --hero-primary: #18BC7A;
+  --hero-dark: #0b2e31;
+  --hero-accent: #07B6EF;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --text-body: #4b5563;
+}
+
+.hero-premium {
+  position: relative;
+  min-height: 90vh;
+  /* Full viewport height feeling */
+  background: linear-gradient(135deg, var(--hero-bg-start) 0%, var(--hero-bg-end) 100%);
+  overflow: hidden;
+  padding-top: 100px;
+  /* Account for fixed header */
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Shapes */
+.hero-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.shape-1 {
+  width: 500px;
+  height: 500px;
+  background: #bbf7d0;
+  top: -100px;
+  right: -100px;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: #bae6fd;
+  bottom: -50px;
+  left: -100px;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Left Content --- */
+.hero-content-col {
+  padding-right: 40px;
+  margin-bottom: 40px;
+  /* Mobile spacing */
+}
+
+/* Badge Pill */
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 188, 122, 0.1);
+  color: var(--hero-primary);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(24, 188, 122, 0.2);
+}
+
+.badge-icon {
+  font-size: 1rem;
+}
+
+/* Typography */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111827;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--hero-primary) 0%, #059669 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  background: var(--hero-primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(24, 188, 122, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(24, 188, 122, 0.4);
+  background: #10a36b;
+  color: #fff;
+}
+
+.hero-btn-secondary {
+  background: #fff;
+  color: #111827;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #000;
+}
+
+/* Trust Stats */
+.hero-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--hero-dark);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.trust-label {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.2;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 40px;
+  background: #e5e7eb;
+}
+
+/* --- Right Image Area --- */
+.hero-image-wrapper {
+  position: relative;
+  border-radius: 30px;
+  /* overflow: hidden;  Allow floating cards to protrude if needed, or keep hidden but pad container */
+  /* If floating cards need to be half-out, we generally set wrappers to not overflow. Here we'll keep them inside for simplicity or adjust */
+}
+
+/* Main Image Styling */
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: rotate(-1deg);
+  /* Slight artistic tilt */
+  transition: transform 0.3s ease;
+}
+
+/* Floating Cards */
+.float-card {
+  position: absolute;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--glass-border);
+  min-width: 200px;
+  z-index: 2;
+}
+
+.card-1 {
+  bottom: 40px;
+  left: -20px;
+}
+
+.card-2 {
+  top: 40px;
+  right: -20px;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  background: rgba(24, 188, 122, 0.15);
+  color: var(--hero-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.icon-circle.secondary {
+  background: rgba(7, 182, 239, 0.15);
+  color: var(--hero-accent);
+}
+
+.float-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--hero-dark);
+}
+
+.float-desc {
+  font-size: 0.8rem;
+  color: var(--text-body);
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards ease-out;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 0.8s forwards ease-out;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.floating-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-anim-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-premium {
+    padding-top: 140px;
+    /* More space for mobile header */
+    text-align: center;
+  }
+
+  .hero-content-col {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust-row {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hero-image-wrapper {
+    margin-top: 20px;
+  }
+
+  .card-1 {
+    left: 0;
+    bottom: 20px;
+  }
+
+  .card-2 {
+    right: 0;
+    top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  /* Simplify detailed floats on small mobile if needed */
+  .float-card {
+    padding: 10px;
+    min-width: 160px;
+  }
+
+  .card-1 {
+    bottom: 10px;
+    left: -10px;
+  }
+
+  .card-2 {
+    top: 10px;
+    right: -10px;
+  }
+}
