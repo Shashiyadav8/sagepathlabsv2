@@ -6,14 +6,14 @@ import "./StatsSection.css";
 // Defining stats with icons (using existing material-icons logic or emojis/images if suited, 
 // keeping it consistent with other sections which use material-icons-outlined)
 const stats = [
-  { value: 2000, suffix: "+", label: "Collection Sites", icon: "location_on" },
-  { value: 415, suffix: "+", label: "Workforce", icon: "groups" },
-  { value: 20, suffix: "+", label: "Processing Labs", icon: "biotech" },
-  { value: 8, suffix: "K+", label: "Sq.ft Lab Space", icon: "square_foot" },
-  { value: 20, suffix: "+", label: "Technologies Adopted", icon: "psychology" }, // 'psychology' implies brain/tech/smart
-  { value: 25, suffix: "K+", label: "Daily Samples", icon: "science" },
-  { value: 75, suffix: "K+", label: "Daily Tests", icon: "fact_check" },
-  { value: 2, suffix: "M+", label: "Samples Yearly", icon: "bar_chart" },
+  { value: 2000, suffix: "+", label: "Collection Sites"},
+  { value: 415, suffix: "+", label: "Workforce"},
+  { value: 20, suffix: "+", label: "Processing Labs"},
+  { value: 8, suffix: "K+", label: "Sq.ft Lab Space"},
+  { value: 20, suffix: "+", label: "Technologies Adopted" }, // 'psychology' implies brain/tech/smart
+  { value: 25, suffix: "K+", label: "Daily Samples"},
+  { value: 75, suffix: "K+", label: "Daily Tests" },
+  { value: 2, suffix: "M+", label: "Samples Yearly"  },
 ];
 
 const StatsSection = () => {
@@ -32,9 +32,7 @@ const StatsSection = () => {
           {stats.map((stat, i) => (
             <div className="col-lg-3 col-md-4 col-sm-6" key={i}>
               <div className="stats-card-modern">
-                <div className="stats-icon-wrapper">
-                  <span className="material-icons-outlined">{stat.icon}</span>
-                </div>
+                
                 <div className="stats-content">
                   <div className="stats-value">
                     <CountUp
