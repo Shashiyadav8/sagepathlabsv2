@@ -37,7 +37,7 @@ export default function Footer() {
               <li><a href="/"><FaChevronRight className="f-arrow" /> Home</a></li>
               <li><a href="/about"><FaChevronRight className="f-arrow" /> About Us</a></li>
               <li><a href="/doctors"><FaChevronRight className="f-arrow" /> Medical Team</a></li>
-              <li><a href="/careers"><FaChevronRight className="f-arrow" /> Careers</a></li>
+              <li><a href="/Careers"><FaChevronRight className="f-arrow" /> Careers</a></li>
               <li><a href="/Become-a-Partner"><FaChevronRight className="f-arrow" /> Franchise</a></li>
               <li><a href="/contact"><FaChevronRight className="f-arrow" /> Contact</a></li>
             </ul>
