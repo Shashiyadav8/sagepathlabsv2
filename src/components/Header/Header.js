@@ -136,8 +136,9 @@ const Header = () => {
       >
         <div className="header-left">
           <div className="header-logo-wrap">
-            <img src={logo} alt="SagePath Labs Logo" className="header-logo" />
-
+            <NavLink to="/" aria-label="Home">
+              <img src={logo} alt="SagePath Labs Logo" className="header-logo" />
+            </NavLink>
           </div>
         </div>
 
@@ -178,7 +179,7 @@ const Header = () => {
                       aria-expanded={openSubmenu === label}
                       aria-controls={submenuId}
                       onClick={(e) => {
-                        if (window.innerWidth <= 991) {
+                        if (window.innerWidth <= 1250) {
                           handleSubmenuToggle(label, e);
                         }
                       }}

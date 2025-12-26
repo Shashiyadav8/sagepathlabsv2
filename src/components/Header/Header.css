@@ -16,13 +16,16 @@
 /* ---------- Base ---------- */
 .header-main {
   width: 100%;
-  background: var(--bg);
-  border-bottom: 1px solid rgba(6, 182, 239, 0.08);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 /* Top bar - Premium info bar */
@@ -145,7 +148,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 8px;
+  gap: 24px;
   flex: 1 1 auto;
   justify-content: center;
 }
@@ -162,19 +165,19 @@
 /* Link style - Premium typography */
 .nav-link {
   text-decoration: none;
-  color: #1f2937;
-  font-weight: 650;
-  font-size: 0.98rem;
-  padding: 10px 14px;
-  border-radius: 12px;
-  transition: all 220ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  color: #334155;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 50px;
+  transition: all 300ms cubic-bezier(0.2, 0.9, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 6px;
   position: relative;
   z-index: 10;
   background: transparent;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.01em;
 }
 
 .nav-link .nav-label {
@@ -221,8 +224,8 @@
 
 /* Active item as attractive pill with gradient */
 .nav-link.active,
-.parent-active > .nav-link,
-.nav-item.parent-active > .nav-link {
+.parent-active>.nav-link,
+.nav-item.parent-active>.nav-link {
   color: #fff !important;
   padding: 11px 20px;
   border-radius: 12px;
@@ -238,15 +241,15 @@
 }
 
 /* Hide underline when active */
-.nav-link.active + .nav-underline,
-.parent-active > .nav-link .nav-underline {
+.nav-link.active+.nav-underline,
+.parent-active>.nav-link .nav-underline {
   transform: scaleX(0);
   opacity: 0;
 }
 
 /* Chevron rotation with smooth animation */
-.nav-item.submenu-open > .nav-link .chev-icon,
-.nav-item.parent-active > .nav-link .chev-icon {
+.nav-item.submenu-open>.nav-link .chev-icon,
+.nav-item.parent-active>.nav-link .chev-icon {
   transform: rotate(-180deg);
   color: rgba(255, 255, 255, 0.9);
 }
@@ -275,9 +278,10 @@
   pointer-events: none;
 }
 
-@media (min-width: 992px) {
-  .has-submenu:hover > .submenu,
-  .has-submenu:focus-within > .submenu {
+@media (min-width: 1251px) {
+
+  .has-submenu:hover>.submenu,
+  .has-submenu:focus-within>.submenu {
     display: flex;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -353,9 +357,9 @@
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 12px 32px rgba(237, 28, 36, 0.2);
-  transition: all 240ms cubic-bezier(0.2, 0.9, 0.2, 1);
-  letter-spacing: 0.3px;
+  box-shadow: 0 10px 20px -10px rgba(237, 28, 36, 0.5);
+  transition: all 300ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  letter-spacing: 0.5px;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   position: relative;
@@ -367,11 +371,27 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 500ms ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: none;
   pointer-events: none;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 200%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
 
 .order-btn:hover::before {
@@ -443,6 +463,7 @@
   .header-navbar {
     padding: 12px 16px;
     gap: 12px;
+    position: static;
   }
 
   .header-logo {
@@ -458,14 +479,15 @@
   }
 
   .header-nav {
-    position: fixed;
-    top: 80px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    height: calc(100vh - 80px);
+    height: auto;
+    max-height: 85vh;
     background: var(--bg);
     border-radius: 0;
-    box-shadow: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     align-items: stretch;
     width: 100%;
@@ -495,7 +517,7 @@
 
   /* Premium mobile active state */
   .nav-link.active,
-  .parent-active > .nav-link {
+  .parent-active>.nav-link {
     color: #fff !important;
     padding: 14px 16px;
     border-radius: 11px;
@@ -515,9 +537,10 @@
     overflow: hidden;
     transform: none;
     opacity: 1;
+    pointer-events: auto;
   }
 
-  .has-submenu.submenu-open > .submenu,
+  .has-submenu.submenu-open>.submenu,
   .has-submenu .submenu.open {
     display: flex;
     flex-direction: column;
